@@ -1,4 +1,4 @@
-//1.- si es par o no
+//1.- Revisar si un numero es par o impar
 def even(num:Int):Int = {
   if(num % 2 == 0){
     return 1
@@ -7,30 +7,28 @@ def even(num:Int):Int = {
     return 0
   }
 }
-//val a = 2;val b = 3; if(a % 2 == 0) println("Es par") else ("Es impar")
 
-//2.- pares
-//def even(num:List[Int]):List[Int] = {
-def even(num:List[Int]):Boolean = {
+even(2)
+even(7)
+
+//2.- Revisar si la lista contiene un numero par o no
+def evenlt(num:List[Int]) = {
   var bool = false
   for(i <- num){
-    if(num(i) % 2 == 0){
-      bool = true
+      if(i % 2 == 0) {
+        bool = true} else {
+        bool = false
+        }
+        println(bool)
+      }
     }
-    else {
-      bool = false
-    }
-  }
-  return bool
-}
 
+val mylist = List(1,1,3)
+val mylist2 = List(1,3,7,2)
+evenlt(mylist)
+evenlt(mylist2)
 
-
-//3.- lucky seven
-/*val enteros = List(7,7)
-val enteros_sinrepetir = enteros.toSet
-enteros_sinrepetir.sum = enteros.sum*/
-val enteros = List(1,2,7,7)
+//3.- Lucky 7 (Si hay 7 entonces valen por 2)
 def lucky_seven(n:List[Int]):Int = {
   var re = n.sum
   for (i <- n){
@@ -41,21 +39,34 @@ def lucky_seven(n:List[Int]):Int = {
   return re
 }
 
-//4.- equilibrio
-val enteros = List(1,5,3,3)
-//enteros.slice(0,(enteros.lengt /2))
-//if(enteros.slice(0,(enteros.length / 2)) == enteros.length / 2)
-if(enteros.length % 2 == 0)
-  println("True")
-  else {
-    println("False")
-  }
+val lucky = List(1,2,7,7)
+lucky_seven(lucky)
 
-//5.- palíndromo
-val a = "anna"
-if(a == a.reverse){
-  println("Es palíndromo")
+//1 + 2 + 7 + 7 = 31
+
+//4.- Equilibrio (si una lista puede partirse en dos partes iguales o no)
+def equil(re:List[Int]): Boolean = {
+if(re.length % 2 == 0){
+  return true} else {
+    return false
+  }
 }
-else {
+
+val eq1 = List(1,5,3,3)
+val eq2 = List(1,3,5)
+equil(eq1)
+equil(eq2)
+
+//5.- Revisar si un string es palíndromo (su reverso es igual al string original)
+def rev(a:String) = {
+  if(a == a.reverse){
+    println("Es palíndromo")
+  } else {
   println("No es palíndromo")
+ }
 }
+
+val str1 = "anna"
+val str2 = "juan"
+rev(str1)
+rev(str2)
