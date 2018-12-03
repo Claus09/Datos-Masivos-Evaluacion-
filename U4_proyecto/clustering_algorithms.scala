@@ -47,6 +47,9 @@ df.show()
 val kmeans = new KMeans().setK(10).setSeed(1L)
 val k_model = kmeans.fit(df)
 
+/*PLOT: KMeans*/
+display(k_model,df)
+
 /*5.1 RESULTADOS DE KMEANS*/
 val WSSE = k_model.computeCost(df)
 println(s"Within set sum of Squared Errors = $WSSE")
